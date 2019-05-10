@@ -2696,6 +2696,18 @@ client.on('message', msg => {
   });
 
 client.on('message', msg => {
+    if (msg.content === 'صاحب بوت') {
+      msg.reply('**! Mál➹⎛ トゥルキパシャ ⎞♔❥ 𝕄𝔼 ᵀᴹ**');
+    }
+  });
+
+client.on('message', msg => {
+    if (msg.content === 'صاحب بوت') {
+      msg.reply('**شــركـــة : Me ᵀᴹ**');
+    }
+  });
+
+client.on('message', msg => {
     if (msg.content === 'شباب') {
       msg.reply('**هــلا**');
     }
