@@ -27,7 +27,7 @@ const youtube = new YouTube("AIzaSyCQapWI28_Um0n4AEGNVw7l3QZqhQF0cFs");
 const sql = require("sqlite");
 const dateFormat = require('dateformat'); 
 const pretty = require('pretty-ms') 
-const prefix = '=';
+const prefix = '%';
 var table = require('table').table
 var ti={}  
 ,spee={}
@@ -236,7 +236,7 @@ if (command == "زخرفة") {
 });
 
 client.on('message', message => {
-    if (message.content === "=رومات") {
+    if (message.content === "%رومات") {
         if (message.author.bot) return
                       if (!message.guild) return;
 
@@ -337,7 +337,7 @@ message.channel.send({embed});
 });
 
 client.on('message', message => {
-    if (message.content.startsWith("${prefix}صور")) {
+    if (message.content.startsWith("%صور")) {
 if(!message.channel.guild) return;
         var mentionned = message.mentions.users.first();
     var client;
@@ -744,7 +744,7 @@ if (message.content.startsWith(prefix + 'نقاطى')) {
 });
 
 client.on('message', message => {
-    if(message.content == '=vip-servers') {
+    if(message.content == '%vip-servers') {
              if(!message.author.id === '564414567946387487') return;
     var gimg;
     var gname;
@@ -777,7 +777,7 @@ client.on('message', message => {
     if (!points[message.author.id]) points[message.author.id] = { 
         points: 0,
       };
-    if (message.content == "${prefix}ايموجى") { 
+    if (message.content == "%ايموجى") { 
         if(!message.channel.guild) return message.reply('**هذا الأمر للسيرفرات فقط**').then(m => m.delete(3000));
     
     const type = require('./emojis.json'); 
@@ -1112,7 +1112,7 @@ if (!points[message.author.id]) points[message.author.id] = {
     points: 0,
   };
   if(!message.guild) return;
-    let id = message.author.id,prefix="${prefix}";
+    let id = message.author.id,prefix="%";
     if (spee[id] && (new Date).getTime() - spee[id] < 15*1000) {
         let r = (new Date).getTime() - spee[id];
         r = 15*1000 - r;
@@ -1303,7 +1303,7 @@ if (!points[message.author.id]) points[message.author.id] = {
     points: 0,
   };
   if(!message.guild) return;
-    let id = message.author.id,prefix="${prefix}";
+    let id = message.author.id,prefix="%";
     if (spee[id] && (new Date).getTime() - spee[id] < 15*1000) {
         let r = (new Date).getTime() - spee[id];
         r = 15*1000 - r;
@@ -1358,7 +1358,7 @@ message.channel.sendEmbed(sh);
 
 client.on('message', message => {
                                 if(!message.channel.guild) return;
-                        if (message.content.startsWith('${prefix}ping')) {
+                        if (message.content.startsWith('%ping')) {
                             if(!message.channel.guild) return;
                             var msg = `${Date.now() - message.createdTimestamp}`
                             var api = `${Math.round(client.ping)}`
@@ -1481,7 +1481,7 @@ if (!points[message.author.id]) points[message.author.id] = {
     points: 0,
   };
   if(!message.guild) return;
-    let id = message.author.id,prefix="${prefix}";
+    let id = message.author.id,prefix="%";
     if (spee[id] && (new Date).getTime() - spee[id] < 15*1000) {
         let r = (new Date).getTime() - spee[id];
         r = 15*1000 - r;
@@ -1552,7 +1552,7 @@ var al7arthyCodes2 = ["📙__60%__  **|**  📘__40%__","📙__63%__  **|**  �
 client.on('message', message => {
     if(!message.guild) return;
     if (message.author.bot) return;
-      let id = message.author.id,prefix="${prefix}";//البريفكس
+      let id = message.author.id,prefix="%";//البريفكس
       if (ti[id] && (new Date).getTime() - ti[id] < 20*1000) {
           let r = (new Date).getTime() - ti[id];
           r = 20*1000 - r;
@@ -1644,7 +1644,7 @@ const zead = [
    '*** انتظر الجزء الثاني عندما يوصل البوت 100 سيرفر , ساعدني في نشر البوت وادخل هذا السيرفر  ***'
 ];
  client.on('message', message => {
- if (message.content.startsWith('${prefix}مريم')) {
+ if (message.content.startsWith('%مريم')) {
   var mariam= new Discord.RichEmbed()
   .setTitle("لعبة مريم ..")
   .setColor('RANDOM')
@@ -1720,7 +1720,7 @@ var Za7f = [
 ];
 
 client.on('message', message => {
- if (message.content.startsWith("=عقاب")) {
+ if (message.content.startsWith("%عقاب")) {
               if(!message.channel.guild) return message.reply('** This command only for servers**');
 var embed = new Discord.RichEmbed()
 .setColor('RANDOM')
@@ -2064,7 +2064,7 @@ function play(guild, song) {
 	serverQueue.textChannel.send(`بدء تشغيل : **${song.title}**`);
 }//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
 
-const adminprefix = "${prefix}vip";//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
+const adminprefix = "%vip";//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
 client.on('message', message => {//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
   var argresult = message.content.split(` `).slice(1).join(' ');//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
     if (!devs.includes(message.author.id)) return;//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
@@ -2727,7 +2727,7 @@ client.on('message', msg => {
 
   client.on('message', message => {
           let args = message.content.split(' ').slice(1);
-   if(message.content.split(' ')[0] == '=لون'){
+   if(message.content.split(' ')[0] == '%لون'){
            const embedd = new Discord.RichEmbed()
      .setFooter('Requested by '+message.author.username, message.author.avatarURL)
    .setDescription(`**There's No Color With This Number ** :x: `)
@@ -3031,7 +3031,7 @@ const prefix = '.'
 
 
   client.on('message', msg => {//msg
-    if (msg.content === '=الوان') {
+    if (msg.content === '%الوان') {
       msg.channel.send({file : "https://cdn.pg.sa/1c4R2LijPA.png"})
     }
   });
