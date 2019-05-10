@@ -2678,7 +2678,7 @@ client.on('message', message => {
 });
 
 client.on('message', msg => {
-    if (msg.content === '=help') {
+    if (msg.content === '%help') {
       msg.reply('**شــوف خــاصــك الــغــالــى:mailbox_with_mail:**');
     }
   });
@@ -2702,8 +2702,8 @@ client.on('message', msg => {
   });
   
 client.on('message', msg => {
-    if (msg.content === '3') {
-      msg.reply('**#``-`` __W__elcome __T__ø ${message.guild.name} ** :champagne_glass:**');
+    if (msg.content === '.') {
+      msg.reply('**#``-`` __W__elcome __T__ø __S__erver :champagne_glass:**');
     }
   });
 
