@@ -3299,6 +3299,17 @@ client.on('channelUpdate', (oldChannel, newChannel) => {
  
             logChannel.send(newName);
         }
+        if(oldChannel.topic !== newChannel.topic) {
+            let newTopic = new Discord.RichEmbed()
+            .setTitle('**[قناة التحرير]**')
+            .setThumbnail(userAvatar)
+            .setColor('BLUE')
+            .setDescription(`**\n**:wrench: Successfully Edited **${channelType}** Channel Topic\n\n**Old Topic:**\n\`\`\`${oldChannel.topic || 'NULL'}\`\`\`\n**New Topic:**\n\`\`\`${newChannel.topic || 'NULL'}\`\`\`\n**Channel:** ${oldChannel} (ID: ${oldChannel.id})\n**By:** <@${userID}> (ID: ${userID})`)
+            .setTimestamp()
+            .setFooter(oldChannel.guild.name, oldChannel.guild.iconURL)
+ 
+            logChannel.send(newTopic);
+        }
     })
 });
  
@@ -3378,7 +3389,7 @@ client.on('guildUpdate', (oldGuild, newGuild) => {
         }
         if(oldGuild.region !== newGuild.region) {
             let guildRegion = new Discord.RichEmbed()
-            .setTitle('**[CHANGE GUILD REGION]**')
+            .setTitle('**[تغيير منطقة الذنب]**')
             .setThumbnail(userAvatar)
             .setColor('BLUE')
             .setDescription(`**\n**:white_check_mark: Successfully \`\`EDITED\`\` The guild region.\n\n**Old Region:** ${oldGuild.region}\n**New Region:** ${newGuild.region}\n**By:** <@${userID}> (ID: ${userID})`)
@@ -3421,7 +3432,7 @@ client.on('guildUpdate', (oldGuild, newGuild) => {
             }
  
             let verLog = new Discord.RichEmbed()
-            .setTitle('**[GUILD VERIFICATION LEVEL CHANGE]**')
+            .setTitle('**[التغير في مستوى الذنب]**')
             .setThumbnail(userAvatar)
             .setColor('BLUE')
             .setDescription(`**\n**:white_check_mark: Successfully \`\`EDITED\`\` Guild verification level.\n\n**Old Verification Level:** ${oldVerLvl}\n**New Verification Level:** ${newVerLvl}\n**By:** <@${userID}> (ID: ${userID})`)
@@ -3468,7 +3479,7 @@ client.on('guildMemberUpdate', (oldMember, newMember) => {
             let role = newMember.roles.filter(r => !oldMember.roles.has(r.id)).first();
  
             let roleAdded = new Discord.RichEmbed()
-            .setTitle('**[ADDED ROLE TO MEMBER]**')
+            .setTitle('**[إضافة دور إلى الأعضاء]**')
             .setThumbnail(oldMember.guild.iconURL)
             .setColor('GREEN')
             .setDescription(`**\n**:white_check_mark: Successfully \`\`ADDED\`\` Role to **${oldMember.user.username}**\n\n**User:** <@${oldMember.id}> (ID: ${oldMember.user.id})\n**Role:** \`\`${role.name}\`\` (ID: ${role.id})\n**By:** <@${userID}> (ID: ${userID})`)
@@ -3481,7 +3492,7 @@ client.on('guildMemberUpdate', (oldMember, newMember) => {
             let role = oldMember.roles.filter(r => !newMember.roles.has(r.id)).first();
  
             let roleRemoved = new Discord.RichEmbed()
-            .setTitle('**[REMOVED ROLE FROM MEMBER]**')
+            .setTitle('**[دور إزالة من الأعضاء]**')
             .setThumbnail(oldMember.guild.iconURL)
             .setColor('RED')
             .setDescription(`**\n**:negative_squared_cross_mark: Successfully \`\`REMOVED\`\` Role from **${oldMember.user.username}**\n\n**User:** <@${oldMember.user.id}> (ID: ${oldMember.id})\n**Role:** \`\`${role.name}\`\` (ID: ${role.id})\n**By:** <@${userID}> (ID: ${userID})`)
@@ -3493,7 +3504,7 @@ client.on('guildMemberUpdate', (oldMember, newMember) => {
     })
     if(oldMember.guild.owner.user.id !== newMember.guild.owner.user.id) {
         let newOwner = new Discord.RichEmbed()
-        .setTitle('**[UPDATE GUILD OWNER]**')
+        .setTitle('**[تحديث مالك غيلدر]**')
         .setThumbnail(oldMember.guild.iconURL)
         .setColor('GREEN')
         .setDescription(`**\n**:white_check_mark: Successfully \`\`TRANSFER\`\` The Owner Ship.\n\n**Old Owner:** <@${oldMember.user.id}> (ID: ${oldMember.user.id})\n**New Owner:** <@${newMember.user.id}> (ID: ${newMember.user.id})`)
