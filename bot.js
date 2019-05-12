@@ -3299,17 +3299,6 @@ client.on('channelUpdate', (oldChannel, newChannel) => {
  
             logChannel.send(newName);
         }
-        if(oldChannel.topic !== newChannel.topic) {
-            let newTopic = new Discord.RichEmbed()
-            .setTitle('**[CHANNEL EDIT]**')
-            .setThumbnail(userAvatar)
-            .setColor('BLUE')
-            .setDescription(`**\n**:wrench: Successfully Edited **${channelType}** Channel Topic\n\n**Old Topic:**\n\`\`\`${oldChannel.topic || 'NULL'}\`\`\`\n**New Topic:**\n\`\`\`${newChannel.topic || 'NULL'}\`\`\`\n**Channel:** ${oldChannel} (ID: ${oldChannel.id})\n**By:** <@${userID}> (ID: ${userID})`)
-            .setTimestamp()
-            .setFooter(oldChannel.guild.name, oldChannel.guild.iconURL)
- 
-            logChannel.send(newTopic);
-        }
     })
 });
  
