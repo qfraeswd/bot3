@@ -421,7 +421,7 @@ client.on('message', message => {
     let MRole = message.content.split(" ").slice(2).join(" ");
     if(!MRole)return message.reply("**يجب عليك وضع اسم الرتبة؟**").then(msg => {msg.delete(5000)});
     message.guild.member(user).addRole(message.guild.roles.find("name", MRole));
-    message.reply('** تـم ✅ **').then(msg => {msg.delete(1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000)});
+    message.reply('** تـم ✅ **').then(msg => {msg.delete(900000)});
     }
     });
 	
@@ -439,7 +439,7 @@ client.on('message', message => {
     let MRole = message.content.split(" ").slice(2).join(" ");
     if(!MRole)return message.reply("يجب عليك وضع اسم الرتبة").then(msg => {msg.delete(5000)});
     message.guild.member(user).removeRole(message.guild.roles.find("name", MRole));
-    message.reply('** تـم ✅ **').then(msg => {msg.delete(1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000)});
+    message.reply('** تـم ✅ **').then(msg => {msg.delete(900000)});
     }
     });
 	
