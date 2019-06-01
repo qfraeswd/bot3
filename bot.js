@@ -110,7 +110,7 @@ member.guild.fetchInvites().then(guildInvites => {
                               let ava = new Avatar;
                               ava.src = buf;
                               ctx.beginPath();
-                              ctx.arc(100, 101, 62, 0, Math.PI*2);
+                              ctx.arc(77, 101, 62, 0, Math.PI*2);
                               ctx.stroke();
                                  ctx.clip();
                                  ctx.drawImage(ava, 13, 38, 128, 126); 
